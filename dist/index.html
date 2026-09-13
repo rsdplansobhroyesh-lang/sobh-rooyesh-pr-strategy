@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071716" />
+    <meta name="description" content="نقشه تعاملی اهداف معاونت روابط عمومی صبح‌رویش" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23071716'/%3E%3Cpath d='M32 49c0-14 8-25 19-30-1 16-7 28-19 30ZM31 49C18 46 12 36 13 21c11 4 18 14 18 28Z' fill='%2328c1b8'/%3E%3C/svg%3E" />
+    <title>نقشه اهداف معاونت روابط عمومی | صبح‌رویش</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
+    <div class="ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <header class="topbar">
+      <button class="brand" id="homeButton" aria-label="بازگشت به نمای معاونت">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span><b>صبح‌رویش</b><small>نقشه اهداف روابط عمومی</small></span>
+      </button>
+      <nav class="actions" aria-label="حالت‌های نمایش">
+        <button class="text-button" id="overviewButton"><span class="icon-grid" aria-hidden="true"></span>نمای کلی</button>
+        <button class="primary-button" id="presentButton"><span aria-hidden="true">◁</span> حالت ارائه</button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="scene" id="scene" aria-labelledby="sceneTitle">
+        <div class="scene-meta">
+          <p class="eyebrow" id="sceneEyebrow">یک نظام راهبردی یکپارچه</p>
+          <h1 id="sceneTitle">معاونت روابط عمومی</h1>
+          <p id="sceneHint">برای دیدن واحدها، هسته مرکزی را انتخاب کنید.</p>
+        </div>
+
+        <svg class="connections" id="connections" aria-hidden="true" viewBox="0 0 1000 680" preserveAspectRatio="none"></svg>
+        <div class="spatial-stage" id="spatialStage" aria-label="نقشه تعاملی واحدها و اهداف"></div>
+
+        <div class="system-count" aria-label="خلاصه ساختار">
+          <span><b>۱</b> معاونت</span><i></i><span><b>۴</b> واحد</span><i></i><span><b>۱۲</b> هدف</span>
+        </div>
+      </section>
+
+      <section class="detail" id="detail" role="dialog" aria-modal="true" aria-labelledby="detailGoal" aria-live="polite" hidden>
+        <button class="detail-close" id="detailClose" aria-label="بستن جزئیات">×</button>
+        <div class="detail-grid">
+          <aside class="detail-context">
+            <p class="eyebrow" id="detailUnit"></p>
+            <p class="goal-index" id="detailIndex"></p>
+            <div class="alignment">
+              <span>هم‌راستایی راهبردی</span>
+              <p id="detailAlignment"></p>
+            </div>
+          </aside>
+          <article class="detail-editorial">
+            <p class="section-label">هدف اصلاحی</p>
+            <h2 id="detailGoal"></h2>
+            <section class="key-result">
+              <span class="key-symbol" aria-hidden="true">↳</span>
+              <div><p class="section-label">نتیجه کلیدی</p><p id="detailResult"></p></div>
+            </section>
+            <section class="indicators">
+              <div class="indicator-heading"><p class="section-label">شاخص‌های ارزیابی</p><span id="indicatorCount"></span></div>
+              <div id="indicatorList"></div>
+            </section>
+            <details id="proposedWrap"><summary>هدف پیشنهادی اولیه</summary><p id="detailProposed"></p></details>
+          </article>
+        </div>
+      </section>
+
+      <section class="overview" id="overview" role="dialog" aria-modal="true" hidden aria-labelledby="overviewTitle">
+        <button class="detail-close" id="overviewClose" aria-label="بستن نمای کلی">×</button>
+        <div class="overview-head">
+          <p class="eyebrow">تصویر یکپارچه راهبرد</p>
+          <h2 id="overviewTitle">چهار مسیر، یک حرکت جمعی</h2>
+          <p>توزیع اهداف معاونت روابط عمومی در واحدهای اجرایی</p>
+        </div>
+        <div class="overview-map" id="overviewMap"></div>
+        <div class="strategic-legend" id="strategicLegend" aria-label="اهداف راهبردی مشترک"></div>
+      </section>
+    </main>
+
+    <nav class="breadcrumb" id="breadcrumb" aria-label="مسیر فعلی"></nav>
+
+    <div class="presentation" id="presentationControls" hidden>
+      <button id="prevButton" aria-label="مرحله قبل">→</button>
+      <div><span id="presentationLabel"></span><div class="progress"><i id="presentationProgress"></i></div></div>
+      <button id="nextButton" aria-label="مرحله بعد">←</button>
+      <button class="exit-present" id="exitPresent">خروج</button>
+    </div>
+
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
